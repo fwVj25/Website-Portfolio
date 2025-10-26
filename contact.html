@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name | Contact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-dark': '#1F2937',
+                        'secondary-light': '#F3F4F6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased">
+    <header id="main-header" class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo / Name -->
+            <a href="index.html" id="logo" class="text-2xl font-extrabold text-primary-dark hover:text-indigo-600 transition duration-300">
+                Name
+            </a>
+
+            <nav class="space-x-4 md:space-x-8">
+                <a href="index.html" id="nav-about" class="nav-link text-primary-dark font-medium">About</a>
+                <a href="portfolio.html" id="nav-portfolio" class="nav-link text-primary-dark font-medium">Portfolio</a>
+                <a href="contact.html" id="nav-contact" class="nav-link text-primary-dark font-medium">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+        <section id="contact">
+            <h1 class="text-4x1 font-extrabold mb-10 text-primary-dark border-b pb-4">
+                Get In Touch
+            </h1>
+
+            <div id="contact-card bg-white p-6 rounded-x1 shadow-2x1 max-w-2x1 mx-auto">
+                <p>
+                    I am currently seeking an <b>Internship</b>. Feel Free to reach out and discuss collaborations or career opportunities!
+                </p>
+
+                <div id="contact-details" class="space-y-6">
+
+                    <div class="flex items-center space-x-4">
+                        <span class="text-indigo-600 text-2xl">📧</span> 
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Email</p>
+                            <a href="mailto:fuev25@gmail.com" class="text-lg font-semibold text-primary-dark hover:text-indigo-600 transition duration-300">
+                                your.email@example.com
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <span class="text-indigo-600 text-2xl">💻</span> 
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Email</p>
+                            <a href="https://github.com/fwVj25/Website-Portfolio.git" target="_blank" class="text-lg font-semibold text-primary-dark hover:text-indigo-600 transition duration-300">
+                                GitHub Repository
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-primary-dark text-white text-center py-6 mt-16">
+        <p class="text-sm">&copy; <span id="current-year"></span> Name. Built with VSCode.</p>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        /** Updates the navigation link corresponding to the current page. */
+        function highlightCurrentPage() {
+            const activeLink = document.getElementById('nav-contact'); 
+            if (activeLink) {
+                activeLink.classList.add('nav-active');
+            }
+        }
+
+        // Renamed function call
+        window.onload = highlightCurrentPage;
+    </script>
+</body>
+</html>

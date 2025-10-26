@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-dark': '#1F2937', // Custom dark color
+                        'secondary-light': '#F3F4F6', // Custom light color
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased">
+    <header id="main-header" class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            
+            <a href="index.html" id="logo" class="text-2xl font-extrabold text-primary-dark hover:text-indigo-600 transition duration-300">
+                Name
+            </a>
+
+            <nav class="space-x-4 md:space-x-8">
+                <a href="index.html" id="nav-about" class="nav-link text-primary-dark font-medium">About</a>
+                <a href="portfolio.html" id="nav-portfolio" class="nav-link text-primary-dark font-medium">Portfolio</a>
+                <a href="contact.html" id="nav-contact" class="nav-link text-primary-dark font-medium">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+        <section id="portfolio">
+            <!-- Portfolio Section -->
+            <h1 class="text-4x1 font-extrabold mb-10 text-primary-dark border-b pb-4">
+                My Projects & Work
+            </h1>
+
+            <!-- Grid Container for Portfolio Items -->
+            <div id="porfolio-grid" class="grid md:grid-cols-3 lg:grid-cols-3 gap-8">
+
+                <div class="portfolio-card bg-white p-6 rounded-x1 shadow-lg hover:shadow-x1 transition duration-300 border-t-4 border-indigo-500">
+                    <!-- Project 1 -->
+                    <h2 class="text-2x1 font-semibold mb-2 text-primary-dark">Project 1</h2>
+                    <p class="text-gray-500 text-sm mb-2 text-primary-dark">Java</p>
+                    <iframe src="https://www.youtube.com/embed/mV3OyQfFlJs?si=nZv_ECbe_LRqlhR9" class="w-full h-auto rounded-lg mb-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p class="text-gray-600 mb-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eaque eos, ut numquam rem corporis tempora praesentium tempore voluptates explicabo, expedita dolor! Quis, similique dicta?
+                    </p>
+                    <a href="https://youtu.be/mV3OyQfFlJs?si=nihtcvH67pwNmwzY" target="_blank" class="text-indigo-600 font-medium hover:text-indigo-800 transition duration-300">
+                        View Details &rarr;
+                    </a>
+                </div>
+
+                <div class="portfolio-card bg-white p-6 rounded-x1 shadow-lg hover:shadow-x1 transition duration-300 border-t-4 border-indigo-500">
+                    <!-- Project 2 -->
+                    <h2 class="text-2x1 font-semibold mb-2 text-primary-dark">Project 2</h2>
+                    <p class="text-gray-500 text-sm mb-2 text-primary-dark">C++</p>
+                    <img src="https://placehold.co/400x250/E5E7EB/6B7280?text=Project+Mockup+2"
+                        alt="Project 2 Image"
+                        class="w-full h-auto rounded-lg mb-4"
+                    >
+                    <p class="text-gray-600 mb-4">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere, adipisci sint architecto possimus facilis velit.
+                    </p>
+                    <a href="#" target="_blank" class="text-indigo-600 font-medium hover:text-indigo-800 transition duration-300">
+                        View Details &rarr;
+                    </a>
+                </div>
+
+                <div class="portfolio-card bg-white p-6 rounded-x1 shadow-lg hover:shadow-x1 transition duration-300 border-t-4 border-indigo-500">
+                    <!-- Project 3 -->
+                    <h2 class="text-2x1 font-semibold mb-2 text-primary-dark">Project 3</h2>
+                    <p class="text-gray-500 text-sm mb-2 text-primary-dark">C</p>
+                    <img src="https://placehold.co/400x250/E5E7EB/6B7280?text=Project+Mockup+3"
+                        alt="Project 3 Image"
+                        class="w-full h-auto rounded-lg mb-4"
+                    >
+                    <p class="text-gray-600 mb-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt dolor ipsum, quam itaque iure commodi!
+                    </p>
+                    <a href="#" target="_blank" class="text-indigo-600 font-medium hover:text-indigo-800 transition duration-300">
+                        View Details &rarr;
+                    </a>
+                </div>
+
+                <!-- Add any future projects below -->
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="bg-primary-dark text-white text-center py-6 mt-16">
+        <p class="text-sm">&copy; <span id="current-year"></span> Name. Built with VSCode.</p>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        /** Updates the navigation link corresponding to the current page. */
+        function highlightCurrentPage() {
+            const activeLink = document.getElementById('nav-portfolio'); 
+            if (activeLink) {
+                activeLink.classList.add('nav-active');
+            }
+        }
+
+        // Renamed function call
+        window.onload = highlightCurrentPage;
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name | About</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-dark': '#1F2937', // Custom dark color
+                        'secondary-light': '#F3F4F6', // Custom light color
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased">
+    <header id="main-header" class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            
+            <a href="index.html" id="logo" class="text-2xl font-extrabold text-primary-dark hover:text-indigo-600 transition duration-300">
+                Name
+            </a>
+
+            <nav class="space-x-4 md:space-x-8">
+                <a href="index.html" id="nav-about" class="nav-link text-primary-dark font-medium">About</a>
+                <a href="portfolio.html" id="nav-portfolio" class="nav-link text-primary-dark font-medium">Portfolio</a>
+                <a href="contact.html" id="nav-contact" class="nav-link text-primary-dark font-medium">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+
+        <section id="about">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-10 text-primary-dark tracking-tight">
+                Computer Engineering Student
+            </h1>
+            <div class="grid md:grid-cols-3 gap-10 items-start">
+                
+                <div class="md:col-span-1">
+                    <img id="profile-image" 
+                         src="https://placehold.co/300x300/1F2937/F3F4F6?text=Your+Photo" 
+                         alt="A professional profile photo of me." 
+                         class="w-full h-auto object-cover rounded-full shadow-xl transform hover:scale-105 transition duration-500 border-4 border-white ring-4 ring-indigo-500/50"
+                         onerror="this.onerror=null; this.src='https://placehold.co/300x300/1F2937/F3F4F6?text=Image';"
+                    >
+                    <div class="mt-6 text-center text-sm text-gray-500">
+                        <p>Currently based in <b>Platteville, WI</b></p>
+                    </div>
+                </div>
+
+                <div id="about-content" class="md:col-span-2 space-y-6">
+                    
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam assumenda magnam ipsam voluptates? Possimus facilis quia quaerat in quibusdam. Voluptate, ab voluptates? Ipsum maxime magni et est, repudiandae culpa temporibus nihil facilis pariatur rerum expedita sed quisquam veritatis illo reprehenderit.
+                    </p>
+                    
+                    <div class="border-l-4 border-indigo-500 pl-4 bg-white p-4 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold text-primary-dark">Skills: </h3>
+                        <p class="text-gray-500 text-base mt-1">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus et fugiat tempora similique in odit quos autem numquam facere illo.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-indigo-500 pl-4 bg-white p-4 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold text-primary-dark">What am I Looking For?</h3>
+                        <p class="text-gray-500 text-base mt-1">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae nemo ab optio, quae voluptatem, repellat aut consequuntur neque asperiores iste cupiditate sit autem obcaecati nam quam quasi distinctio tempora modi!
+                        </p>
+                    </div>
+
+                    <a href="portfolio.html" 
+                        id="portfolio-cta" 
+                        class="inline-block mt-8 px-8 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-lg hover:bg-indigo-700 transform hover:translate-y-[-2px] transition duration-300 ease-in-out cursor-pointer"
+                    >
+                        See My Work &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-primary-dark text-white text-center py-6 mt-16">
+        <p class="text-sm">&copy; <span id="current-year"></span> Name. Built with VSCode.</p>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        /** Updates the navigation link corresponding to the current page. */
+        // Renamed function for clarity
+        function highlightCurrentPage() {
+            // Renamed variable from 'activeLink' to 'aboutLink' for page specificity
+            const aboutLink = document.getElementById('nav-about'); 
+            if (aboutLink) {
+                // We don't remove the 'text-primary-dark' class since it's the base
+                // but we add the custom 'nav-active' class defined in style.css
+                aboutLink.classList.add('nav-active');
+            }
+        }
+
+        // Renamed function call
+        window.onload = highlightCurrentPage;
+    </script>
+
+</body>
+</html>
